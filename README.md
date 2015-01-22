@@ -7,11 +7,11 @@ To use this code you need to have installed Postfix (http://www.postfix.org/) an
 1. First you need to edit the Postfix virtual alias map configuration file (also known as virtual_alias_maps.pcre)
 and add the following line:
 
-
-# /etc/postfix/virtual_alias_maps.pcre
+```sh
+# /etc/postfix/virtual_alias_maps.pcre&nbsp
 # From REGEX    <TAB>   system alias
 /^(.*)@(.*)/            sample-smtp-anonymous-client
-
+```
 
 Read more about on http://www.postfix.org/postconf.5.html#virtual_alias_maps
 
@@ -19,15 +19,17 @@ Read more about on http://www.postfix.org/postconf.5.html#virtual_alias_maps
 the new alias and redirect the Postfix to our code:
 
 
+```sh
 # /etc/aliases
-sample-smtp-anonymous-client:   |"phpcli -q /PATH/TO/sample-smtp-anonymous-client/app/console eb:mailbox-handler"
-
+sample-smtp-anonymous-client:   |"php -q /PATH/TO/sample-smtp-anonymous-client/app/console eb:mailbox-handler"
+```
 
 3. Lastly you need to restart postfix:
 
 
+```sh
 service postfix restart
-
+```
 
 After that, all messages received from this Postfix should be redirected and handled by our code!
 
