@@ -1,0 +1,29 @@
+{
+    "name": "wondeotec/sample-smtp-anonymous-client",
+    "type": "library",
+    "description": "SMTP Anonymous Client - A SMTP Client to receive email messages without emailaddress",
+    "keywords": ["smtp", "anonymous", "client"],
+    "homepage": "https://github.com/wondeotec/sample-smtp-anonymous-client",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Emailbidding",
+            "email": "developers@emailbidding.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "swiftmailer/swiftmailer": "@stable",
+        "messaged/php-mime-mail-parser": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phpmd/phpmd": "~1.5.0",
+        "satooshi/php-coveralls": "dev-master",
+        "squizlabs/php_codesniffer": "1.5.*"
+    },
+    "autoload": {
+        "psr-0": { "EB\\SMTPAnonymousClient": "src/" }
+    }
+}

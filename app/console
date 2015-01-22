@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+// app/console
+set_time_limit(0);
+
+require_once __DIR__.'/bootstrap.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use EB\SMTPAnonymousClient\Command\MailboxHandlerCommand;
+
+$application = new Application();
+$application->addCommands(
+    array(
+        new MailboxHandlerCommand(),
+    )
+);
+
+$application->run();

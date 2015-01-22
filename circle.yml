@@ -1,0 +1,9 @@
+machine:
+  php:
+    version: 5.4.10
+dependencies:
+  pre:
+    - curl -s http://getcomposer.org/installer | php && php composer.phar install --no-interaction --dev --prefer-source
+test:
+  override:
+    - ./vendor/bin/phpunit --coverage-text 
